@@ -20,7 +20,7 @@ def ler_csv(caminho):  # define a funcao que recebe o caminho do arquivo CSV
     with open(caminho, newline="") as arq:  # abre o arquivo; o 'with' fecha automaticamente ao final
         for linha in csv.reader(arq):  # percorre o arquivo; cada 'linha' vira uma lista de strings, ex.: ['1.0', '2.5']
             if not linha or not linha[0].strip():  # se a linha esta vazia ou o primeiro campo so tem espacos...
-                continue  # ...ignora essa linha e passa para a proxima
+                continue
             xs.append(float(linha[0]))  # converte a 1a coluna (x) para numero real e adiciona em xs
             ys.append(float(linha[1]))  # converte a 2a coluna (f(x)) para numero real e adiciona em ys
     if len(xs) < 4:  # verifica se foram lidos menos de 4 pontos (exigencia do trabalho)
